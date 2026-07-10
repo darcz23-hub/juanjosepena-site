@@ -59,9 +59,9 @@ export default function PropuestasPage() {
           Propuestas para Portoviejo
         </h1>
         <p className="text-neutral-600 max-w-2xl">
-          Estos son los ejes preliminares de trabajo para la Alcaldía de
-          Portoviejo. El plan de gobierno completo se actualizará en esta
-          sección conforme avance la campaña.
+          Estos son los ejes preliminares de trabajo para Portoviejo. El
+          plan de gobierno completo se actualizará en esta sección conforme
+          avance la campaña.
         </p>
       </div>
 
