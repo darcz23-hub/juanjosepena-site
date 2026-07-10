@@ -7,7 +7,7 @@ export default function Header() {
         <Link href="/" className="font-bold text-lg tracking-tight">
           Juan José <span className="text-acento">Peña</span>
           <span className="block text-xs font-normal text-white/70">
-            Alcalde de Portoviejo 2026
+            Precandidato 2026
           </span>
         </Link>
         <nav className="flex items-center gap-6 text-sm font-medium">
