@@ -31,7 +31,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-neutral-100 px-4">
       <div className="w-full max-w-sm bg-white rounded-xl shadow-md p-8">
         <h1 className="text-xl font-bold text-marino mb-1">Panel de campaña</h1>
-        <p className="text-sm text-neutral-500 mb-6">Juan José Peña · Alcaldía de Portoviejo</p>
+        <p className="text-sm text-neutral-500 mb-6">Juan José Peña</p>
 
         <form onSubmit={onSubmit} className="space-y-4">
           <div>
