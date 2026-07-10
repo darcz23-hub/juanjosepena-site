@@ -11,11 +11,6 @@ const LOGROS = [
     detalle:
       "Vicepresidente de la Comisión Permanente de Planificación Estratégica y Presupuesto, e impulsor de la aplicación de la tasa de recolección de basura como mecanismo de financiamiento sostenible del servicio municipal.",
   },
-  {
-    titulo: "Respaldo multipartidista",
-    detalle:
-      "Su precandidatura está respaldada por una coalición de Movimiento Amigo (Lista 16) y Sí Podemos (Lista 72), enfocada en la continuidad del desarrollo técnico cantonal.",
-  },
 ];
 
 const FORMACION = [
@@ -31,8 +26,6 @@ const TRAYECTORIA_POLITICA = [
   "Concejal de Portoviejo",
   "Presidente de la Comisión Permanente de Ordenamiento Territorial, Infraestructura y Servicios Públicos",
   "Vicepresidente de la Comisión Permanente de Planificación Estratégica y Presupuesto",
-  "Ex Director Provincial de las Juventudes de la Revolución Ciudadana",
-  "Ex Director Provincial de la RC5 Manabí",
 ];
 
 export default function HomePage() {
@@ -41,16 +34,15 @@ export default function HomePage() {
       <section className="bg-gradient-to-br from-marino via-marino to-marino-dark text-white">
         <div className="max-w-5xl mx-auto px-4 py-20 md:py-28 flex flex-col items-start gap-6">
           <span className="inline-block bg-acento text-marino-dark font-semibold text-xs uppercase tracking-wide px-3 py-1 rounded-full">
-            Precandidato a la Alcaldía de Portoviejo
+            Precandidato 2026
           </span>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight max-w-2xl">
-            Juan José Peña, un alcalde con experiencia técnica para Portoviejo
+            Juan José Peña, experiencia técnica al servicio de Portoviejo
           </h1>
           <p className="text-white/85 max-w-xl text-lg">
             37 años, odontólogo, docente universitario y Concejal de
-            Portoviejo. Precandidato a la Alcaldía por Movimiento Amigo
-            (Lista 16) y Sí Podemos (Lista 72), rumbo a las Elecciones
-            Seccionales del 29 de noviembre de 2026.
+            Portoviejo. Precandidato rumbo a las Elecciones Seccionales
+            del 29 de noviembre de 2026.
           </p>
           <div className="flex flex-wrap gap-4 pt-2">
             <Link
@@ -75,11 +67,9 @@ export default function HomePage() {
           Juan José Peña, 37 años, es odontólogo, especialista en
           Implantología y en Cirugía y Traumatología Bucomaxilofacial,
           docente e investigador de la Universidad San Gregorio de
-          Portoviejo, Concejal del cantón y precandidato a la Alcaldía en las
-          Elecciones Seccionales de 2026. Su precandidatura fue formalizada
-          con el respaldo de una coalición multipartidista integrada por
-          Movimiento Amigo (Lista 16) y Sí Podemos (Lista 72), enfocada en
-          dar continuidad al desarrollo técnico del cantón.
+          Portoviejo, Concejal del cantón y precandidato en las
+          Elecciones Seccionales de 2026, enfocado en dar continuidad al
+          desarrollo técnico del cantón.
         </p>
 
         <div className="grid md:grid-cols-2 gap-10">
