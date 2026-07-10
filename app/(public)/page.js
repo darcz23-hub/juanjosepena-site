@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const LOGROS = [
   {
@@ -31,32 +32,46 @@ const TRAYECTORIA_POLITICA = [
 export default function HomePage() {
   return (
     <div>
-      <section className="bg-gradient-to-br from-marino via-marino to-marino-dark text-white">
-        <div className="max-w-5xl mx-auto px-4 py-20 md:py-28 flex flex-col items-start gap-6">
-          <span className="inline-block bg-acento text-marino-dark font-semibold text-xs uppercase tracking-wide px-3 py-1 rounded-full">
-            Precandidato 2026
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight max-w-2xl">
-            Juan José Peña, experiencia técnica al servicio de Portoviejo
-          </h1>
-          <p className="text-white/85 max-w-xl text-lg">
-            37 años, odontólogo, docente universitario y Concejal de
-            Portoviejo. Precandidato rumbo a las Elecciones Seccionales
-            del 29 de noviembre de 2026.
-          </p>
-          <div className="flex flex-wrap gap-4 pt-2">
-            <Link
-              href="/propuestas"
-              className="bg-acento hover:bg-acento-dark transition-colors text-marino-dark font-semibold px-6 py-3 rounded-lg"
-            >
-              Ver propuestas
-            </Link>
-            <Link
-              href="/contacto"
-              className="border border-white/40 hover:bg-white/10 transition-colors font-semibold px-6 py-3 rounded-lg"
-            >
-              Contacto
-            </Link>
+      <section className="bg-gradient-to-br from-marino via-marino to-marino-dark text-white overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 items-center gap-10">
+          <div className="flex flex-col items-start gap-6 order-2 md:order-1">
+            <span className="inline-block bg-acento text-marino-dark font-semibold text-xs uppercase tracking-wide px-3 py-1 rounded-full">
+              Precandidato 2026
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              Juan José Peña, experiencia técnica al servicio de Portoviejo
+            </h1>
+            <p className="text-white/85 max-w-xl text-lg">
+              37 años, odontólogo, docente universitario y Concejal de
+              Portoviejo. Precandidato rumbo a las Elecciones Seccionales
+              del 29 de noviembre de 2026.
+            </p>
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link
+                href="/propuestas"
+                className="bg-acento hover:bg-acento-dark transition-colors text-marino-dark font-semibold px-6 py-3 rounded-lg"
+              >
+                Ver propuestas
+              </Link>
+              <Link
+                href="/contacto"
+                className="border border-white/40 hover:bg-white/10 transition-colors font-semibold px-6 py-3 rounded-lg"
+              >
+                Contacto
+              </Link>
+            </div>
+          </div>
+          <div className="order-1 md:order-2 flex justify-center md:justify-end">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full bg-white/10 ring-4 ring-white/20 shadow-2xl overflow-hidden">
+              <Image
+                src="/juan-jose-pena.jpeg"
+                alt="Juan José Peña"
+                fill
+                sizes="(max-width: 768px) 320px, 384px"
+                className="object-cover object-top"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
