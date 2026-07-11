@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api, ApiError } from "@/lib/api";
 
 const VACIO = {
@@ -18,9 +18,30 @@ export default function NuevaCampanaForm({ onCreada, onCancelar }) {
   const [form, setForm] = useState(VACIO);
   const [error, setError] = useState("");
   const [guardando, setGuardando] = useState(false);
+  const [plantillas, setPlantillas] = useState([]);
+  const [plantillaElegidaId, setPlantillaElegidaId] = useState("");
+
+  useEffect(() => {
+    api
+      .listarPlantillas({ activa: true })
+      .then((data) => setPlantillas(Array.isArray(data) ? data : data?.registros || []))
+      .catch(() => setPlantillas([]));
+  }, []);
 
   function set(campo, valor) {
     setForm((f) => ({ ...f, [campo]: valor }));
+  }
+
+  function onElegirPlantilla(id) {
+    setPlantillaElegidaId(id);
+    if (!id) return;
+    const p = plantillas.find((x) => String(x.id) === String(id));
+    if (!p) return;
+    setForm((f) => ({
+      ...f,
+      plantillaNombre: p.plantillaWhatsapp || f.plantillaNombre,
+      mensajePreview: p.contenido || f.mensajePreview,
+    }));
   }
 
   async function onSubmit(e) {
@@ -51,6 +72,29 @@ export default function NuevaCampanaForm({ onCreada, onCancelar }) {
   return (
     <form onSubmit={onSubmit} className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6 space-y-4">
       <h2 className="font-semibold text-marino">Nueva campaña</h2>
+
+      {plantillas.length > 0 && (
+        <div>
+          <label className="block text-sm font-medium text-neutral-700 mb-1">
+            Usar plantilla guardada (opcional)
+          </label>
+          <select
+            value={plantillaElegidaId}
+            onChange={(e) => onElegirPlantilla(e.target.value)}
+            className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-marino"
+          >
+            <option value="">— Escribir manualmente —</option>
+            {plantillas.map((p) => (
+              <option key={p.id} value={p.id}>
+                {p.nombre}
+              </option>
+            ))}
+          </select>
+          <p className="text-xs text-neutral-400 mt-1">
+            Autocompleta el nombre de plantilla de Meta y el mensaje de referencia. Puedes ajustarlos después.
+          </p>
+        </div>
+      )}
 
       <div className="grid md:grid-cols-2 gap-4">
         <div>
